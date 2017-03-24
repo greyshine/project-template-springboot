@@ -1,6 +1,6 @@
 # PROJECT TEMPLATE FOR SPRINGBOOT
 
-includes the [google material icon](https://material.io/icons/) set   
+includes the [google material icon](https://google.github.io/material-design-icons/) set   
 includes [jquery](https://jquery.com/)  
 includes [purecss.io](https://purecss.io)  
 
