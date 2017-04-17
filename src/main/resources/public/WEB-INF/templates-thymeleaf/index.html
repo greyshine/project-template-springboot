@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>index.html with thymeleaf</title>
+	</head>
+  <body>
+  	Hello World Thymleaf!
+  	<hr/>
+  	
+  	<span th:text="${attribute1}">Julius Ceasar</span> says: "<span th:text="${attribute2.value}">Julius Ceasar</span>"
+  	
+  	<hr/>
+  	
+  	<div th:each="anEntry: ${list}">
+		List-Entry: <span th:text="${anEntry.toString()}"></span>
+	</div>
+  	
+  	<hr/>
+  	
+  	<div th:each="anEntry: ${map}">
+  	
+  		Map: <span th:text="${anEntry.key}">Key</span> = <span th:text="${anEntry.value}">Value</span>
+  	
+  	</div>
+  	
+  	
+  </body>
+</html>
