@@ -3,8 +3,6 @@ package de.greyshine.springboottemplate;
 import java.net.URL;
 import java.util.Map;
 
-import javax.servlet.ServletContext;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.thymeleaf.IEngineConfiguration;
