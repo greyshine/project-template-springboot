@@ -21,4 +21,9 @@ public class Application extends WebMvcConfigurerAdapter {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new ExampleInterceptor()).addPathPatterns( "/*" );
 	}
+	
+	@Bean
+	public SessionListener getSessionListener(){
+		return new SessionListener();
+	}
 }
