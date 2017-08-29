@@ -20,5 +20,4 @@ public class Index2Controller {
 		
 		return "forward:"+ file;
 	}
-	
 }

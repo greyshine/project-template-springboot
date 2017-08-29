@@ -46,6 +46,4 @@ public class ExampleInterceptor implements AsyncHandlerInterceptor {
 		
 		System.out.println( "here: "+ new Throwable().getStackTrace()[0] );
 	}
-
-
 }
