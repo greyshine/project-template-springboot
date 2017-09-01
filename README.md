@@ -21,3 +21,5 @@ Shows different usages for presenting outputs (html, json, plain/text, ...):
 - plain text output: [http://localhost:8080/status](http://localhost:8080/index2.html)
 - templating thymeleaf-example: [http://localhost:8080/thymeleaf-example](http://localhost:8080/thymeleaf-example)
 
+- by uncommenting the https parts in ``application.properties`` url needs to be adjusted accordingly, e.g.: ``https://localhost:8443``
+

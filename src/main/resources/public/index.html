@@ -52,6 +52,32 @@
 	<a href="/getSomeJson1">A returned Object (automatically converted to json) </a><br/>
 	<a href="/getSomeJson2">A returned com.google.gson.JsonElement (automatically converted by Gson to json text) </a><br/>
 	
+	<br/>
+	
+	Form1:<br/>
+	<form action="/form-submit" method="post">
+	
+		<input type="text" name="field" value="value1" placeholder="field" /><br/>
+		<input type="text" name="fields" value="values1" placeholder="fields1" /><br/>
+		<input type="text" name="fields" value="values2" placeholder="fields2" /><br/>
+		<br/>
+		<button type="submit">WEG</button>
+	
+	</form>
+	<br/>
+	
+	Form multipart/form-data:<br/>
+	<form action="/mp-form-submit" method="post" enctype="multipart/form-data">
+	
+		<input type="text" name="field" value="value1" placeholder="field" /><br/>
+		<input type="text" name="fields" value="values1" placeholder="fields1" /><br/>
+		<input type="text" name="fields" value="values2" placeholder="fields2" /><br/>
+		
+		<input type="file" name="file" />
+		
+		<br/>
+		<button type="submit">WEG</button>
+	</form>
 	
 
  </body>
