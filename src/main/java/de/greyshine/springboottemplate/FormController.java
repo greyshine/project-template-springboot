@@ -82,10 +82,17 @@ public class FormController {
 		System.out.println( inModel );
 	}
 
+	/**
+	 * must be static
+	 */
 	public static class SomeModel {
 		
 		private String value;
 		
+		/**
+		 * must have a setter!
+		 * @param value
+		 */
 		public void setValue(String value) {
 			this.value = value;
 		}

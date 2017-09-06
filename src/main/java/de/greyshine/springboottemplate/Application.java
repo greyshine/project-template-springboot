@@ -7,11 +7,19 @@ import javax.jms.ConnectionFactory;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.web.servlet.AsyncHandlerInterceptor;
@@ -20,8 +28,14 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
+/**
+ * Good reading: https://stackoverflow.com/questions/27405713/running-code-after-spring-boot-starts
+ * 
+ * @author greyshine
+ *
+ */
 @SpringBootApplication
-public class Application extends WebMvcConfigurerAdapter {
+public class Application extends WebMvcConfigurerAdapter implements ApplicationRunner, ApplicationListener<ApplicationReadyEvent>  {
 	
 	public static final String BEAN_JMSLISTENERCONTAINERFACTORY = "jmsListenerContainerFactory";
 	
@@ -119,5 +133,30 @@ public class Application extends WebMvcConfigurerAdapter {
 				Object handler) throws Exception {
 		}
 	}
+	
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+	}
+	
+	@Override
+	public void onApplicationEvent(ApplicationReadyEvent event) {
+	}
+	
+	/**
+	 * https://www.mkyong.com/spring/spring-embedded-database-examples/
+	 * @return
+	 */
+//	@Bean
+//	public DataSource dataSourceH2() {
+//
+//		// no need shutdown, EmbeddedDatabaseFactoryBean will take care of this
+//		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+//		EmbeddedDatabase db = builder
+//			.setType(EmbeddedDatabaseType.H2) //.H2 or .DERBY
+//			//.addScript("db/sql/create-db.sql")
+//			//.addScript("db/sql/insert-data.sql")
+//			.build();
+//		return db;
+//	}
 	
 }

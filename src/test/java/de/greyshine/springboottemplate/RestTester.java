@@ -26,6 +26,11 @@ public class RestTester {
 		RestAssured.config = RestAssured.config().sslConfig( new SSLConfig().relaxedHTTPSValidation() );
 		RestAssured.baseURI = SERVER;
 	}
+	
+	static RequestSpecification initWithCredentials(String inUser, String inPassword) {
+		// https://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z9
+		return given().header("Authorization", "user "+ inUser +":"+ inPassword);
+	}
 
 	/**
 	 * invoke when server is running
@@ -98,11 +103,6 @@ public class RestTester {
 		
 	}
 	
-	static RequestSpecification initWithCredentials(String inUser, String inPassword) {
-		// https://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z9
-		return given().header("Authorization", "user "+ inUser +":"+ inPassword);
-	}
-
 	@Test
 	public void requestJmsSuccess() {
 		
