@@ -46,7 +46,7 @@ public class Application extends WebMvcConfigurerAdapter implements ApplicationR
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new ExampleInterceptor()).addPathPatterns( "/*" );
+		registry.addInterceptor(new ExampleInterceptor()).addPathPatterns( "/**" );
 		registry.addInterceptor(new CredentialsInterceptor("hello","world")).addPathPatterns( "/secured/*" );
 	}
 	
